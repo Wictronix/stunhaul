@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunhaul - Good Things Wrapped</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>stunhaul</h1>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#about" class="nav-link">About</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for gifts..." id="searchInput">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="auth-dropdown">
+                        <button class="auth-btn" id="authBtn">
+                            <i class="fas fa-user"></i>
+                            <span>Account</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <a href="#" onclick="showLogin()">Sign In</a>
+                            <a href="#" onclick="showSignup()">Sign Up</a>
+                        </div>
+                    </div>
+
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="trust-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Trusted by 1500+ customers</span>
+                    </div>
+                    <h1>Good Things <span class="highlight">Wrapped</span></h1>
+                    <p>Discover unique, personalized gifts that create lasting memories. Your ultimate destination for customized presents from talented artisans.</p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToProducts()">
+                            Shop Now
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">180+</div>
+                            <div class="stat-label">Products</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Beautiful gift boxes">
+                    <div class="floating-element gift-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="floating-element support-badge">
+                        <div class="support-text">
+                            <div class="support-number">24/7</div>
+                            <div class="support-label">Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Discover the perfect gift for every occasion and every person in your life</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="https://images.pexels.com/photos/1454502/pexels-photo-1454502.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Personalized Jewelry">
+                    <div class="category-overlay">
+                        <div class="category-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Personalized Jewelry</h3>
+                        <p>80+ items</p>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Baby & Kids">
+                    <div class="category-overlay">
+                        <div class="category-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3>Baby & Kids</h3>
+                        <p>60+ items</p>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="https://images.pexels.com/photos/1702373/pexels-photo-1702373.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Wedding Gifts">
+                    <div class="category-overlay">
+                        <div class="category-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Wedding Gifts</h3>
+                        <p>50+ items</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Handpicked favorites from our most talented artisans</p>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+
+            <div class="section-footer">
+                <button class="btn btn-secondary" onclick="showAllProducts()">View All Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Stunhaul?</h2>
+                <p>We're committed to providing the best marketplace experience for our customers</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Shopping</h3>
+                    <p>Your data and payments are protected with bank-level security</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Free shipping on orders over ₹500 with tracking included</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Quality Guarantee</h3>
+                    <p>Every product is vetted for quality and craftsmanship</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Curated Selection</h3>
+                    <p>Handpicked artisans and small businesses you can trust</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service for peace of mind</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day hassle-free returns on all purchases</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Stunhaul</h2>
+                    <p>Since 2022, Stunhaul has been revolutionizing the gift market by connecting customers with unique, personalized gifts from talented artisans and small businesses.</p>
+                    <p>We started our operations with a simple mission: to make finding the perfect customized gift effortless while supporting small retailers and craftspeople.</p>
+                    
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/6956659/pexels-photo-6956659.jpeg?auto=compress&cs=tinysrgb&w=600" alt="About Stunhaul">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h2>Stay in the Loop</h2>
+                <p>Get exclusive deals, new product alerts, and gift inspiration delivered to your inbox</p>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-white">
+                        Subscribe
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                
+                <p class="newsletter-note">Join 150+ subscribers • Unsubscribe anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>stunhaul</h3>
+                    <p>Good Things Wrapped - Your ultimate destination for unique, personalized gifts from talented artisans worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100085873386812" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/stunhaul/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                                      </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                    
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Get in Touch</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ayan@stunhaul.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>8490924241</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kharar, Punjab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stunhaul. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign In</h2>
+                <button class="close-btn" onclick="closeModal('loginModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                <p class="auth-switch">Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button class="close-btn" onclick="closeModal('signupModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                <p class="auth-switch">Already have an account? <a href="#" onclick="switchToLogin()">Sign in</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Products Modal -->
+    <div class="modal" id="productsModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>All Products</h2>
+                <button class="close-btn" onclick="closeModal('productsModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="products-modal-content">
+                <div class="products-filters">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="jewelry">Personalized Jewelry</option>
+                        <option value="baby">Baby & Kids</option>
+                        <option value="wedding">Wedding Gifts</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="">All Prices</option>
+                        <option value="0-50">Under ₹50</option>
+                        <option value="50-100">₹50 - ₹100</option>
+                        <option value="100+">Above ₹100</option>
+                    </select>
+                </div>
+                <div class="all-products-grid" id="allProductsGrid">
+                    <!-- Products will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
